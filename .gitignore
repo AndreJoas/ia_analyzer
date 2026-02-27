@@ -1,0 +1,24 @@
+# Ambiente virtual
+.venv/
+
+# Banco vetorial
+vectordb/
+
+# Cache
+__pycache__/
+*.pyc
+
+# Banco local
+db/
+
+# Variáveis de ambiente
+.env
+
+
+
+# Dados locais
+data/
+
+# Binários
+*.pdf
+*.sqlite3

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        h2 {
+            color: #8b5cf6;
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: none;
+            background: #0f172a;
+            color: white;
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <h2>📝 Meu Perfil</h2>
+        <form method="POST" action="{{ url_for('profile_page') }}">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" value="{{ user.nome if user else '' }}" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" value="{{ user.email if user else '' }}" required>
+
+            <label for="bio">Bio:</label>
+            <textarea name="bio" id="bio" rows="4">{{ user.bio if user else '' }}</textarea>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" name="telefone" id="telefone" value="{{ user.telefone if user else '' }}">
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+
+</html>

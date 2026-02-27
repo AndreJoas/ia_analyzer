@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CV Analyzer - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* =========================================================
+           LOGIN HERO / FORM PROFISSIONAL
+        ========================================================= */
+        
+        body,
+        html {
+            height: 100%;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.15), transparent 40%), radial-gradient(circle at 90% 90%, rgba(99, 102, 241, 0.15), transparent 40%), var(--bg-dark);
+            color: var(--text);
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 450px;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background: var(--glass);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .login-form label {
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        
+        .login-form input {
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text);
+            outline: none;
+            font-size: 0.95rem;
+            transition: 0.25s;
+        }
+        
+        .login-form input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+        
+        .btn-primary {
+            padding: 14px 0;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            transition: 0.25s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.35);
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .login-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <h1>Bem-vindo ao CV Analyzer</h1>
+        <p>Faça login para acessar seu espaço seguro e analisar currículos com tecnologia de ponta.</p>
+
+        <form action="/login" method="POST" class="login-form">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+    </section>
+</body>
+
+</html>

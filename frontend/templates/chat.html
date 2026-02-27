@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat IA - CV Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-robot"></i>
+            <span>CV<b>Analyzer</b></span>
+            <p>Olá, {{ user.nome }}!</p>
+            <a href="{{ url_for('logout') }}">Sair</a>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="{{ url_for('chat_page') }}"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="{{ url_for('dashboard') }}"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+            <li><a href="{{ url_for('chat_page') }}" class="active"><i class="fas fa-comment-dots"></i> Chat IA</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="chat-wrapper">
+
+        <section class="chat-container">
+
+            <!-- UPLOAD -->
+            <header class="chat-header">
+                <div class="upload-zone" id="dropZone">
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                    <label for="fileInput" class="upload-label">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Arraste seu PDF ou <b>clique aqui</b></span>
+                    </label>
+                    <button onclick="uploadNoChat()" class="btn-send-cv">
+                        <i class="fas fa-bolt"></i>
+                        Analisar Agora
+                    </button>
+                </div>
+            </header>
+
+            <!-- CHAT MESSAGES -->
+            <div id="chatMessages" class="chat-content">
+                <div class="message bot">
+                    <div class="avatar"><i class="fas fa-robot"></i></div>
+                    <div class="text">
+                        👋 Olá! Envie seu currículo acima para começarmos a análise.
+                    </div>
+                </div>
+            </div>
+
+            <!-- INPUT -->
+            <footer class="chat-footer">
+                <div class="input-wrapper">
+                    <input type="text" id="chatInput" placeholder="Digite sua dúvida sobre o currículo...">
+                    <button onclick="sendMessage()" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </footer>
+
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
