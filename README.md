@@ -124,3 +124,13 @@ Documentação e README:
     * Estruturar exemplos de output JSON.
 
     * Explicar decisões de engenharia de LLM de forma clara e justificável.
+
+
+
+
+<img width="659" height="563" alt="image" src="https://github.com/user-attachments/assets/2fa764c8-3cdb-47ce-9782-2319d90dd5dc" />
+
+<img width="1477" height="877" alt="image" src="https://github.com/user-attachments/assets/37b1de16-6628-4c4a-816e-008471f12283" />
+
+<img width="1834" height="676" alt="image" src="https://github.com/user-attachments/assets/3895c24f-4ed2-4e69-82ce-fde0749e75de" />
+
