@@ -84,3 +84,43 @@ Usei prompting estruturado e segmentado por intenção e modo, combinando regras
 
 
 
+
+Discurso da IA – como usei IA para desenvolver o sistema
+
+Durante o desenvolvimento, utilizei IA generativa (Copilot e ChatGPT) para:
+
+    * Construção da estrutura:
+
+    * Criar a base de roteamento (route_intent) e definição de agentes.
+
+    * Esboçar a integração entre frontend (chat) e backend (Flask + LLM).
+
+Refinamento de prompts:
+
+    * Ajustar o system prompt para garantir JSON correto.
+
+    * Definir modos “conversação” vs “análise”.
+
+Definição  agentes e fluxos especializados:
+
+    * Currículo → análise estruturada
+
+    * Soft Skills → avaliação comportamental
+
+    * Entrevistador → perguntas técnicas/feedback
+
+    * Conversacional → explicações e dicas
+
+Otimização de fluxo multiagente:
+
+    * Identificar quais dados passam entre agentes (MultiAgentState).
+
+    * Garantir que cada agente use apenas as informações relevantes.
+
+Documentação e README:
+
+    * Gerar diagramas UML do fluxo.
+
+    * Estruturar exemplos de output JSON.
+
+    * Explicar decisões de engenharia de LLM de forma clara e justificável.
